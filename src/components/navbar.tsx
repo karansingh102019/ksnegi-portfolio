@@ -11,7 +11,7 @@ export const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="fixed px-6 top-0 w-full z-50 transition-all duration-300 backdrop-blur-xl bg-white/5 border-b-[0.5px] border-white/20 ">
+    <nav className="fixed px-6 top-0 w-full z-50 transition-all duration-300 backdrop-blur-xl bg-black/20 border-b-[0.5px] border-white/10 ">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18">
           {/* Logo */}
