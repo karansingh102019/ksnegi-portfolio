@@ -28,7 +28,7 @@ const AboutPage = () => {
               </div>
               <div className="relative overflow-hidden">
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 relative z-10">
-                  I'm a passionate UI developer who transforms
+                  {"I'm a passionate UI developer who transforms"}
                   <span className="text-red-400 font-medium"> ideas </span>
                   into
                   <span className="text-red-400 font-medium">
@@ -57,7 +57,7 @@ const AboutPage = () => {
                   <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 relative z-10">
                     I believe in clean code, elegant design, and seamless user
                     experiences. Every project is an opportunity to learn
-                    something new and push the boundaries of what's possible.
+                    something new and push the boundaries of{" what's possible."}
                   </p>
                   <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-red-900 to-red-500 group-hover:w-full transition-all duration-500"></div>
                 </div>

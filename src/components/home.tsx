@@ -28,7 +28,7 @@ export default function HomePage() {
                 <h1
                   className={`slide-in-left text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white leading-[1.1]`}
                 >
-                  Hi, I'm
+                  {"Hi, I'm"}
                   <span className="block bg-gradient-to-r pb-2 from-red-900 via-red-700 to-red-500 bg-clip-text text-transparent">
                     Karan Singh Negi
                   </span>

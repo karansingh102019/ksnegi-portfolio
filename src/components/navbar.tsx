@@ -48,7 +48,7 @@ export const Navbar = () => {
              transition-all duration-300 
              shadow-lg hover:shadow-2xl"
               >
-                Lets Talk
+                {"Let's Talk"}
               </button>
             </Link>
           </div>
@@ -101,7 +101,7 @@ export const Navbar = () => {
              transition-all duration-300 
              shadow-lg hover:shadow-2xl"
                 >
-                  Lets Talk
+                  {"Let's Talk"}
                 </button>
               </Link>
             </div>

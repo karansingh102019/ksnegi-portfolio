@@ -13,13 +13,13 @@ export const Footer = () => {
         <div className="mb-12">
           <h2 className="text-5xl md:text-6xl font-light mb-8 relative">
             <span className="animate-lights bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
-              Lets Work Together
+             {" Let's Work Together"}
             </span>
             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent rounded-full animate-pulse"></div>
           </h2>
 
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Ready to bring your ideas to life? I would love to hear about your
+           { "Ready to bring your ideas to life? I'd love to hear about your"}
             project and discuss how we can create something
             <span className="text-red-400 font-medium"> amazing </span>
             together.
