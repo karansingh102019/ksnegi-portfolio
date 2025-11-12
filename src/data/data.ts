@@ -1,3 +1,25 @@
+"use client";
+import { Skill } from "@/types/types";
+import {
+  SiAdobeillustrator,
+  SiAdobephotoshop,
+  SiAdobexd,
+  SiBootstrap,
+  SiCss3,
+  SiDocker,
+  SiFigma,
+  SiGit,
+  SiGithub,
+  SiHtml5,
+  SiJavascript,
+  SiNextdotjs,
+  SiReact,
+  SiReactbootstrap,
+  SiSass,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+
 export const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
@@ -5,17 +27,103 @@ export const navLinks = [
   { href: "#contact", label: "Contact" },
 ];
 
-export const skills = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Figma",
-  "Abode PhotoShop",
-  "HTML/CSS",
-  "Tailwind CSS",
-  "Adobe illustrator",
-  "Adobe XD",
+export const skillsData: Skill[] = [
+  {
+    name: "HTML",
+    icon: SiHtml5,
+    color: "from-orange-500 to-red-500",
+    iconColor: "text-orange-500",
+  },
+  {
+    name: "CSS",
+    icon: SiCss3,
+    color: "from-blue-500 to-blue-700",
+    iconColor: "text-blue-500",
+  },
+  {
+    name: "JavaScript",
+    icon: SiJavascript,
+    color: "from-yellow-400 to-yellow-600",
+    iconColor: "text-yellow-400",
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    color: "from-blue-500 to-blue-600",
+    iconColor: "text-blue-500",
+  },
+  {
+    name: "React",
+    icon: SiReact,
+    color: "from-cyan-400 to-blue-500",
+    iconColor: "text-cyan-400",
+  },
+  {
+    name: "Next.js",
+    icon: SiNextdotjs,
+    color: "from-gray-100 to-gray-300",
+    iconColor: "text-white",
+  },
+  {
+    name: "Figma",
+    icon: SiFigma,
+    color: "from-purple-500 to-pink-500",
+    iconColor: "text-purple-500",
+  },
+  {
+    name: "Adobe Photoshop",
+    icon: SiAdobephotoshop,
+    color: "from-blue-600 to-blue-800",
+    iconColor: "text-blue-600",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: SiTailwindcss,
+    color: "from-cyan-400 to-blue-500",
+    iconColor: "text-cyan-400",
+  },
+  {
+    name: "Adobe Illustrator",
+    icon: SiAdobeillustrator,
+    color: "from-orange-600 to-yellow-500",
+    iconColor: "text-orange-500",
+  },
+  {
+    name: "Adobe XD",
+    icon: SiAdobexd,
+    color: "from-pink-500 to-purple-600",
+    iconColor: "text-pink-500",
+  },
+  {
+    name: "Bootstrap",
+    icon: SiReactbootstrap,
+    color: "from-purple-500 to-purple-700",
+    iconColor: "text-purple-500",
+  },
+  {
+    name: "Docker",
+    icon: SiDocker,
+    color: "from-blue-400 to-blue-600",
+    iconColor: "text-blue-400",
+  },
+  {
+    name: "Git",
+    icon: SiGit,
+    color: "from-orange-500 to-red-600",
+    iconColor: "text-orange-500",
+  },
+  {
+    name: "GitHub",
+    icon: SiGithub,
+    color: "from-gray-400 to-gray-600",
+    iconColor: "text-gray-300",
+  },
+  {
+    name: "Sass",
+    icon: SiSass,
+    color: "from-pink-400 to-pink-600",
+    iconColor: "text-pink-400",
+  },
 ];
 
 export const experiences = [
@@ -44,7 +152,7 @@ export const experiences = [
 
 export const achievements = [
   {
-    number: "5+",
+    number: "35+",
     label: "Projects Completed",
   },
   {
@@ -52,11 +160,11 @@ export const achievements = [
     label: "Years Experience",
   },
   {
-    number: "3+",
+    number: "99.9%",
     label: "Happy Clients",
   },
   {
-    number: "90%",
+    number: "99%",
     label: "Satisfaction Rate",
   },
 ];
@@ -107,8 +215,5 @@ export const projects = [
     year: "2024",
     link: "#",
     github: "#",
-  }
-  
+  },
 ];
-
-

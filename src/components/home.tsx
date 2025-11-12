@@ -2,8 +2,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import { homeskills } from "@/data/data";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 export default function HomePage() {
+
+  const imageAnim =useRef(null);
+  const images =useRef(null);
+
+  gsap.registerPlugin(ScrollTrigger)
+
+ useGSAP(function(){
+  gsap.to(imageAnim.current, {
+    scrollTrigger:{
+      trigger:imageAnim.current,
+      start:"top 30%",
+      end:"bottom 80%",
+      scrub:true,
+      pin:true
+
+    }
+   
+  })
+})
+
   return (
     <>
       <main
@@ -26,7 +50,7 @@ export default function HomePage() {
               {/* Main Heading */}
               <div className="space-y-6 w-[600px]">
                 <h1
-                  className={`slide-in-left text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white leading-[1.1]`}
+                  className={`slide-in-left text-5xl lg:text-6xl xl:text-7xl font-bold text-white/40 leading-[1.1]`}
                 >
                   {"Hi, I'm"}
                   <span className="block bg-gradient-to-r pb-2 from-red-900 via-red-700 to-red-500 bg-clip-text text-transparent">
@@ -35,19 +59,19 @@ export default function HomePage() {
                 </h1>
 
                 <p className="slide-in-left text-xl lg:text-2xl font-semibold text-gray-600 dark:text-gray-300">
-                  UI/UX & Product Designer
+                  UI Developer.
                 </p>
               </div>
 
               {/* Description */}
-              <p className="slide-in-left text-lg text-gray-400 leading-relaxed max-w-2xl">
+              <p className="slide-in-left text-lg sm:text-sm text-gray-400 leading-relaxed max-w-2xl">
                 I craft digital experiences that are user-friendly, modern, and
                 impactful. Specializing in creating intuitive interfaces that
                 solve real problems and delight users.
               </p>
 
               {/* Key Skills */}
-              <div className="slide-in-left flex flex-wrap gap-3 justify-center lg:justify-start">
+              <div className=" cursor-pointer slide-in-left flex flex-wrap gap-3 justify-center lg:justify-start">
                 {homeskills.map((skill, idx) => (
                   <span
                     key={idx}
@@ -59,10 +83,10 @@ export default function HomePage() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6">
+              <div className=" cursor-pointer flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6">
                 <Link href="#project">
                   <button
-                    className="shimmerauto px-8 py-4 bg-gradient-to-r from-red-900 to-purple-600 rounded-xl hover:from-red-800 hover:to-purple-700 
+                    className=" cursor-pointer shimmerauto px-8 py-4 bg-gradient-to-r from-red-900 to-purple-600 rounded-xl hover:from-red-800 hover:to-purple-700 
                   text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg"
                   >
                     View My Work
@@ -70,7 +94,7 @@ export default function HomePage() {
                 </Link>
 
                 <Link href="#contact">
-                  <button className="shimmer px-8 py-4 bg-black-900 text-gray-200 hover:text-red-600 font-medium rounded-lg border border-gray-600 hover:bg-gradient-to-r from-red-800/10 to-red-900/30 transition-colors duration-200">
+                  <button className=" cursor-pointer shimmer px-8 py-4 bg-black-900 text-gray-200 hover:text-red-600 font-medium rounded-lg border border-gray-600 hover:bg-gradient-to-r from-red-800/10 to-red-900/30 transition-colors duration-200">
                     Get In Touch
                   </button>
                 </Link>
@@ -99,13 +123,13 @@ export default function HomePage() {
             </div>
 
             {/* Right Image */}
-            <div className="flex-shrink-0 group relative cursor-pointer">
+            <div ref={imageAnim} className="flex-shrink-0 group relative cursor-pointer">
               {/* Subtle gradient glow behind image */}
               <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-red-500 via-blue-500 to-black-500 opacity-20 blur-2xl group-hover:opacity-40 transition duration-700"></div>
 
               {/* Image container */}
-              <div className="float-continuous relative rounded-2xl overflow-hidden border border-gray-700/50 bg-gray-900/70 shadow-xl group-hover:shadow-2xl group-hover:shadow-red-500/30 transition-all duration-700">
-                <Image
+              <div  className="cursor-pointer float-continuous  relative rounded-2xl overflow-hidden border border-gray-700/50 bg-gray-900/70 shadow-xl group-hover:shadow-2xl group-hover:shadow-red-500/30 transition-all duration-700">
+                <Image ref={images}
                   src="/save.png"
                   alt="Karan Singh Negi - UI/UX Designer"
                   width={500}

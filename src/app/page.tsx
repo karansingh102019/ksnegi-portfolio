@@ -7,6 +7,8 @@ import { Footer } from "@/components/footer";
 import ProjectsPage from "@/components/project";
 import ContactPage from "@/components/contact";
 
+
+
 export default function Home() {
   return (
     <>

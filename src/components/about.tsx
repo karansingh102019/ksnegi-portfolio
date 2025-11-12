@@ -1,26 +1,20 @@
 "use client";
 import Image from "next/image";
-import { skills, experiences, achievements } from "@/data/data"; 
-import { useEffect, useState } from "react";
+import { experiences, achievements } from "@/data/data";
+import SkillsSection from "./slider";
 
 const AboutPage = () => {
-  const [animate, setAnimate] = useState(false);
 
-  useEffect(() => {
-    setAnimate(true);
-  }, []);
   return (
     <div className="min-h-screen bg-[#060606] text-white ">
       <section
         id="about"
-        className={`px-4 py-20 md:py-32 border-t border-red-800 relative overflow-hidden ${
-          animate ? "slide-in-right" : ""
-        }`}
+        className="slide-in-right px-4 py-20 md:py-32 border-t border-red-800 relative overflow-hidden"
       >
         <div className="max-w-7xl px-6 mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <div className="relative">
+              <div className="relative ">
                 <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-red-900 via-red-700 to-red-500 bg-clip-text text-transparent leading-tight relative">
                   About Me
                   <div className="absolute -bottom-2 left-0 w-32 h-1 bg-gradient-to-r from-red-900 to-red-500 rounded-full"></div>
@@ -57,7 +51,8 @@ const AboutPage = () => {
                   <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 relative z-10">
                     I believe in clean code, elegant design, and seamless user
                     experiences. Every project is an opportunity to learn
-                    something new and push the boundaries of{" what's possible."}
+                    something new and push the boundaries of
+                    {" what's possible."}
                   </p>
                   <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-red-900 to-red-500 group-hover:w-full transition-all duration-500"></div>
                 </div>
@@ -75,7 +70,7 @@ const AboutPage = () => {
                         alt="Karan Singh Negi - UI/UX Designer"
                         width={500}
                         height={600}
-                        className="  brightness-75 rounded-2xl object-cover w-[400px] h-[450px] transition-transform duration-700 group-hover:scale-105 group-hover:rotate-1"
+                        className="brightness-75 rounded-2xl object-cover w-[400px] h-[450px] transition-transform duration-700 group-hover:scale-105 group-hover:rotate-1"
                       />
                     </div>
                   </div>
@@ -101,7 +96,7 @@ const AboutPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 to-black/30 rounded-xl border border-gray-800/50 group-hover:border-red-800/50 transition-all duration-500 backdrop-blur-sm"></div>
 
                 {/* Content */}
-                <div className="relative z-10 p-6">
+                <div className="relative z-10 p-6 shimmer overflow-hidden">
                   <div className="text-4xl md:text-5xl font-bold mb-2 text-white group-hover:text-red-400 transition-colors duration-300 relative">
                     {achievement.number}
                     <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-red-500 group-hover:w-8 transition-all duration-500"></div>
@@ -120,38 +115,7 @@ const AboutPage = () => {
       </section>
 
       {/* Enhanced Skills Section */}
-      <section className="px-4 py-20 relative">
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl pb-5 md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-900 via-red-700 to-red-500 bg-clip-text text-transparent relative">
-              Skills & Technologies
-              <div className=" animate-pulse absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-red-900 to-red-500 rounded-full"></div>
-            </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              The tools and technologies I use to bring ideas to life
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className="group shimmer relative bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-lg border border-gray-800/50 rounded-xl p-6 text-center hover:border-red-500 hover:shadow-2xl hover:shadow-red-900/20 transition-all duration-500 overflow-hidden"
-              >
-                {/* Content */}
-                <div className="relative z-10">
-                  <span className="font-medium text-gray-300 group-hover:text-red-400 transition-colors duration-300">
-                    {skill}
-                  </span>
-                </div>
-
-                {/* Bottom accent line */}
-                <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-red-900 to-red-500 group-hover:w-full transition-all duration-500 rounded-b-xl"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SkillsSection />
       {/* Experience Section */}
       <section className="px-4 py-20 border-t border-red-800 relative">
         <div className="max-w-6xl mx-auto relative z-10">

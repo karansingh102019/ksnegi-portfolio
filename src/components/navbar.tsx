@@ -43,7 +43,7 @@ export const Navbar = () => {
             {/* Desktop Action Button */}
             <Link href="#contact" className="group">
               <button
-                className=" animate-pulse px-8 py-3 text-sm font-semibold text-white bg-gradient-to-r from-red-900 to-purple-600 rounded-xl hover:from-red-800 hover:to-purple-700 
+                className=" cursor-pointer animate-pulse px-8 py-3 text-sm font-semibold text-white bg-gradient-to-r from-red-900 to-purple-600 rounded-xl hover:from-red-800 hover:to-purple-700 
              transform hover:scale-105 
              transition-all duration-300 
              shadow-lg hover:shadow-2xl"
@@ -96,7 +96,7 @@ export const Navbar = () => {
               <Link href="#contact" className="group">
                 <button
                   onClick={toggleMenu}
-                  className=" w-full animate-pulse px-8 py-3 text-sm font-semibold text-white bg-gradient-to-r from-red-900 to-purple-600 rounded-xl hover:from-red-800 hover:to-purple-700 
+                  className=" cursor-pointer w-full animate-pulse px-8 py-3 text-sm font-semibold text-white bg-gradient-to-r from-red-900 to-purple-600 rounded-xl hover:from-red-800 hover:to-purple-700 
              transform hover:scale-105 
              transition-all duration-300 
              shadow-lg hover:shadow-2xl"

@@ -27,7 +27,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <Link href={"/"}>
+          <Link href={"#contact"}>
             <button
               className="w-[180px] h-[70px] text-xl shimmer px-8 py-4 bg-gradient-to-r from-red-900 to-purple-600 rounded-xl hover:from-red-800 hover:to-purple-700 text-white 
             font-semibold transition-all duration-300 ease-in-out 
