@@ -1,5 +1,8 @@
 "use client";
 import { Skill } from "@/types/types";
+import { MdEmail, MdLocationOn, MdSchedule } from "react-icons/md";
+import { FaLinkedinIn, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
+
 import {
   SiAdobeillustrator,
   SiAdobephotoshop,
@@ -152,19 +155,23 @@ export const experiences = [
 
 export const achievements = [
   {
-    number: "35+",
+    action:"+",
+    number: 35,
     label: "Projects Completed",
   },
   {
-    number: "1+",
+    action:"+",
+    number: 1,
     label: "Years Experience",
   },
   {
-    number: "99.9%",
+    action:"%",
+    number: 99,
     label: "Happy Clients",
   },
   {
-    number: "99%",
+    action:"%",
+    number: 99,
     label: "Satisfaction Rate",
   },
 ];
@@ -217,3 +224,48 @@ export const projects = [
     github: "#",
   },
 ];
+
+
+export const contactInfo = [
+    {
+      iconName: <MdEmail />,
+      title: "Email",
+      value: "kn8610519@gmail.com",
+      href: "mailto:kn8610519@gmail.com",
+    },
+    {
+      iconName: <MdLocationOn />,
+      title: "Location",
+      value: "New Delhi, India",
+      href: null,
+    },
+    {
+      iconName: <MdSchedule />,
+      title: "Availability",
+      value: "Available for work",
+      href: null,
+    },
+  ];
+
+  export const socialLinks = [
+    {
+      name: "LinkedIn",
+      href: "https://linkedin.com/in/karan-singh-negi-993136270",
+      icon: <FaLinkedinIn />,
+    },
+    {
+      name: "GitHub",
+      href: "https://github.com/karansingh102019",
+      icon: <FaGithub />,
+    },
+    {
+      name: "Twitter",
+      href: "#",
+      icon: <FaTwitter />,
+    },
+    {
+      name: "Instagram",
+      href: "#",
+      icon: <FaInstagram />,
+    },
+  ];

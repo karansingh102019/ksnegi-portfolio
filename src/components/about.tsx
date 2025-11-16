@@ -2,9 +2,9 @@
 import Image from "next/image";
 import { experiences, achievements } from "@/data/data";
 import SkillsSection from "./slider";
+import CountUp from "@/animations/CountUp";
 
 const AboutPage = () => {
-
   return (
     <div className="min-h-screen bg-[#060606] text-white ">
       <section
@@ -98,9 +98,18 @@ const AboutPage = () => {
                 {/* Content */}
                 <div className="relative z-10 p-6 shimmer overflow-hidden">
                   <div className="text-4xl md:text-5xl font-bold mb-2 text-white group-hover:text-red-400 transition-colors duration-300 relative">
-                    {achievement.number}
+                    <CountUp
+                      from={0}
+                      to={achievement.number}
+                      separator=","
+                      direction="up"
+                      duration={1}
+                      className="count-up-text"
+                    />
+                    {achievement.action}
                     <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-red-500 group-hover:w-8 transition-all duration-500"></div>
                   </div>
+
                   <div className="text-gray-400 text-sm md:text-base group-hover:text-gray-300 transition-colors duration-300">
                     {achievement.label}
                   </div>
@@ -117,45 +126,45 @@ const AboutPage = () => {
       {/* Enhanced Skills Section */}
       <SkillsSection />
       {/* Experience Section */}
-      <section className="px-4 py-20 border-t border-red-800 relative">
+      <section className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 border-t border-red-800 relative">
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-900 via-red-700 to-red-500 bg-clip-text text-transparent mb-6">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-900 via-red-700 to-red-500 bg-clip-text text-transparent mb-4 sm:mb-6">
               Experience
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-red-900 to-red-500 mx-auto animate-pulse rounded-full"></div>
-            <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
+            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-red-900 to-red-500 mx-auto animate-pulse rounded-full"></div>
+            <p className="text-gray-400 mt-4 sm:mt-6 text-base sm:text-lg max-w-2xl mx-auto px-4">
               A journey through innovation, creativity, and technical excellence
             </p>
           </div>
 
-          <div className="space-y-16">
+          <div className="space-y-8 sm:space-y-12 lg:space-y-16">
             {experiences.map((exp, index) => (
               <div key={index} className="relative group">
                 {/* Content Card */}
-                <div className="ml-16 p-8 rounded-xl border border-gray-800 bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm group-hover:border-red-800/50 group-hover:shadow-2xl group-hover:shadow-red-900/20 transition-all duration-500">
+                <div className="ml-0 sm:ml-12 lg:ml-16 p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl border border-gray-800 bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm group-hover:border-red-800/50 group-hover:shadow-2xl group-hover:shadow-red-900/20 transition-all duration-500">
                   {/* Year Badge */}
-                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-900/20 border border-red-800/30 text-red-400 text-sm font-medium mb-4 group-hover:bg-red-800/30 group-hover:text-red-300 transition-all duration-300">
+                  <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-red-900/20 border border-red-800/30 text-red-400 text-xs sm:text-sm font-medium mb-3 sm:mb-4 group-hover:bg-red-800/30 group-hover:text-red-300 transition-all duration-300">
                     {exp.year}
                   </div>
 
                   {/* Role */}
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-200 mb-2 group-hover:text-white group-hover:bg-gradient-to-r group-hover:from-red-400 group-hover:to-red-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-200 mb-2 group-hover:text-white group-hover:bg-gradient-to-r group-hover:from-red-400 group-hover:to-red-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                     {exp.role}
                   </h3>
 
                   {/* Company */}
-                  <div className="flex items-center text-gray-300 font-medium mb-4 group-hover:text-red-300 transition-colors duration-300">
+                  <div className="flex items-center text-sm sm:text-base text-gray-300 font-medium mb-3 sm:mb-4 group-hover:text-red-300 transition-colors duration-300">
                     {exp.company}
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-400 leading-relaxed text-lg group-hover:text-gray-300 transition-colors duration-300">
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
                     {exp.description}
                   </p>
 
                   {/* Hover Effect Line */}
-                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-red-900 to-red-500 group-hover:w-full transition-all duration-500 rounded-b-xl"></div>
+                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-red-900 to-red-500 group-hover:w-full transition-all duration-500 rounded-b-lg sm:rounded-b-xl"></div>
                 </div>
               </div>
             ))}

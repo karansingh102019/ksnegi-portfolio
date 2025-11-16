@@ -5,7 +5,7 @@ import Marquee from 'react-fast-marquee';
 
 const SkillsSection = () => {
   return (
-    <section className="px-6 py-20 relative bg-black">
+    <section className="px-6 py-20 relative bg-black ">
       
         <div className="text-center mb-20">
           <h2 className="text-4xl pb-5 md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-900 via-red-700 to-red-500 bg-clip-text text-transparent relative">

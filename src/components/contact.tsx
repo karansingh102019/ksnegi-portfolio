@@ -1,53 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { FromType } from "@/types/types";
-import { MdEmail, MdLocationOn, MdSchedule } from "react-icons/md";
-import { FaLinkedinIn, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
+import { contactInfo, socialLinks } from "@/data/data";
 
-export default function ContactPage() {
-  const contactInfo = [
-    {
-      iconName: <MdEmail />,
-      title: "Email",
-      value: "kn8610519@gmail.com",
-      href: "mailto:kn8610519@gmail.com",
-    },
-    {
-      iconName: <MdLocationOn />,
-      title: "Location",
-      value: "New Delhi, India",
-      href: null,
-    },
-    {
-      iconName: <MdSchedule />,
-      title: "Availability",
-      value: "Available for work",
-      href: null,
-    },
-  ];
-
-  const socialLinks = [
-    {
-      name: "LinkedIn",
-      href: "https://linkedin.com/in/karan-singh-negi-993136270",
-      icon: <FaLinkedinIn />,
-    },
-    {
-      name: "GitHub",
-      href: "https://github.com/karansingh102019",
-      icon: <FaGithub />,
-    },
-    {
-      name: "Twitter",
-      href: "#",
-      icon: <FaTwitter />,
-    },
-    {
-      name: "Instagram",
-      href: "#",
-      icon: <FaInstagram />,
-    },
-  ];
+export default function ContactPage() {  
 
   const [formData, setFormData] = useState({
     name: "",
@@ -57,6 +13,10 @@ export default function ContactPage() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<{
+    type: "success" | "error" | "";
+    text: string;
+  }>({ type: "", text: "" });
 
   const handleChange = (e: FromType) => {
     setFormData({
@@ -65,19 +25,48 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setStatusMessage({ type: "", text: "" });
 
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatusMessage({
+          type: "success",
+          text: "Message sent successfully! Check your email for confirmation.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setStatusMessage({
+          type: "error",
+          text: data.error || "Failed to send message. Please try again.",
+        });
+      }
+    } catch (error) {
+      setStatusMessage({
+        type: "error",
+        text: "An error occurred. Please try again later.",
+      });
+      console.error("Error:", error);
+    } finally {
       setIsSubmitting(false);
-      alert("Message sent successfully");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 2000);
+    }
   };
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden border-t border-red-800">
+    <div className="bg-black text-white relative overflow-hidden border-t border-red-800">
+      
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         {/* Header Section */}
         <div className="text-center mb-20">
@@ -103,6 +92,19 @@ export default function ContactPage() {
                 Send Message
               </h2>
 
+              {/* Status Message */}
+              {statusMessage.text && (
+                <div
+                  className={`mb-6 p-4 rounded-xl border ${
+                    statusMessage.type === "success"
+                      ? "bg-green-900/20 border-green-500/50 text-green-300"
+                      : "bg-red-900/20 border-red-500/50 text-red-300"
+                  }`}
+                >
+                  {statusMessage.text}
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="group relative">
@@ -112,7 +114,7 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-4 bg-black-900/50 border border-gray-700/50 rounded-xl text-white placeholder-black-400 focus:outline-none focus:border-red-500/50 focus:bg-black transition-all duration-300"
+                      className="w-full px-4 py-4 bg-black-900/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-red-500/50 focus:bg-black transition-all duration-300"
                       placeholder="Your Name"
                     />
                   </div>
