@@ -3,7 +3,7 @@
 import SplashModernRed from "@/animations/splashScreen";
 import { useState } from "react";
 
-export default function SplashWrapper({ children }) {
+export default function SplashWrapper({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   return (

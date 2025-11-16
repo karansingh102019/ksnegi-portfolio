@@ -7,7 +7,6 @@ import {
   SiAdobeillustrator,
   SiAdobephotoshop,
   SiAdobexd,
-  SiBootstrap,
   SiCss3,
   SiDocker,
   SiFigma,
