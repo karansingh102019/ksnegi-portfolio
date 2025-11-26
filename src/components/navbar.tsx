@@ -2,7 +2,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { navLinks } from "@/data/data";
-import { montserrat } from "@/lib/fonts";
 import { IoClose, IoReorderThreeOutline } from "react-icons/io5";
 
 export const Navbar = () => {
@@ -16,11 +15,31 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16 sm:h-18">
           {/* Logo */}
           <Link href="/" className="group">
-            <h1
-              className={`${montserrat.className} text-2xl sm:text-3xl font-bold bg-gradient-to-r from-red-900 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-all duration-300 drop-shadow-lg group-hover:drop-shadow-xl`}
-            >
-              K.S.Negi
-            </h1>
+            <div className="transition-all duration-300 group-hover:scale-105 drop-shadow-lg group-hover:drop-shadow-xl">
+              <svg width="150" height="100" viewBox="0 0 330 120" fill="none">
+                <g transform="scale(0.8) translate(10, 15)">
+                  <path
+                    d="M40 100 L40 20 L70 20 L70 70 L110 20 L150 20 L150 100 L120 100 L120 50 L85 100 L40 100 Z"
+                    stroke="#cf0116"
+                    strokeWidth="8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </g>
+
+                <text
+                  x="140"
+                  y="95"
+                  fontFamily="Inter, Poppins, sans-serif"
+                  fontSize="60"
+                  fontWeight="600"
+                  fill="#cf0116"
+                  letterSpacing="4"
+                >
+                  EXUS
+                </text>
+              </svg>
+            </div>
           </Link>
 
           {/* Desktop Menu */}

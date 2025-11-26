@@ -1,12 +1,12 @@
 "use client";
 import { TrueFocus } from "@/animations/focusText";
-import SplashModernRed from "@/animations/splashScreen";
+
 import { homeskills } from "@/data/data";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef} from "react";
 
 // Mock data
 
