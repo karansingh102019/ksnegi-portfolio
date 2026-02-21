@@ -109,7 +109,7 @@ export default function HomePage() {
               </div>
 
               {/* LEVEL 6: Contact Info */}
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start pt-6 sm:pt-8 border-t border-gray-800/50">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start pt-6 sm:pt-4">
                 <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-200 group">
                   <svg
                     className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 text-green-500 group-hover:scale-110 transition-transform"
@@ -140,6 +140,27 @@ export default function HomePage() {
                   </svg>
                   <span className="font-medium">New Delhi, India</span>
                 </div>
+                <div className="hidden sm:block w-px h-6 bg-gray-700 self-center"></div>
+
+                <a
+                  href="/KaranSinghNegi.cv.pdf"
+                  download="KaranSinghNegi-cv.pdf"
+                >
+                  <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-200 group">
+                    <svg
+                      className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 text-green-500 group-hover:scale-110 transition-transform"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="font-medium">Download Resume</span>
+                  </div>
+                </a>
               </div>
             </div>
 

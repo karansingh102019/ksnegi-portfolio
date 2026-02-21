@@ -237,7 +237,7 @@ function ProjectsPage() {
                 goTo((active - 1 + projects.length) % projects.length)
               }
               aria-label="Previous project"
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-40 w-10 h-10 rounded-full bg-black/40 border border-white/10 hover:bg-black/70 hover:border-red-500/40 flex items-center justify-center text-white/70 hover:text-white transition-all duration-200 backdrop-blur-sm"
+              className="cursor-pointer absolute left-4 top-1/2 -translate-y-1/2 z-40 w-10 h-10 rounded-full bg-black/40 border border-white/10 hover:bg-black/70 hover:border-red-500/40 flex items-center justify-center text-white/70 hover:text-white transition-all duration-200 backdrop-blur-sm"
             >
               <svg
                 className="w-4 h-4"
@@ -256,7 +256,7 @@ function ProjectsPage() {
             <button
               onClick={() => goTo((active + 1) % projects.length)}
               aria-label="Next project"
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-40 w-10 h-10 rounded-full bg-black/40 border border-white/10 hover:bg-black/70 hover:border-red-500/40 flex items-center justify-center text-white/70 hover:text-white transition-all duration-200 backdrop-blur-sm"
+              className="cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 z-40 w-10 h-10 rounded-full bg-black/40 border border-white/10 hover:bg-black/70 hover:border-red-500/40 flex items-center justify-center text-white/70 hover:text-white transition-all duration-200 backdrop-blur-sm"
             >
               <svg
                 className="w-4 h-4"
