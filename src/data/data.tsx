@@ -27,6 +27,7 @@ export const navLinks = [
   { href: "#about", label: "About" },
   { href: "#project", label: "Project" },
   { href: "#contact", label: "Contact" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export const skillsData: Skill[] = [
@@ -154,22 +155,22 @@ export const experiences = [
 
 export const achievements = [
   {
-    action:"+",
+    action: "+",
     number: 35,
     label: "Projects Completed",
   },
   {
-    action:"+",
+    action: "+",
     number: 1,
     label: "Years Experience",
   },
   {
-    action:"%",
+    action: "%",
     number: 99,
     label: "Happy Clients",
   },
   {
-    action:"%",
+    action: "%",
     number: 99,
     label: "Satisfaction Rate",
   },
@@ -188,8 +189,8 @@ export const projects = [
     title: "E-Commerce Website",
     description:
       "A comprehensive admin dashboard for managing online store operations with real-time analytics and inventory management.",
-    image: "/project2.png",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    image: "/project/E.com.png",
+    technologies: ["Next.js", "React.js", "Tailwind CSS"],
     category: "Web Application",
     status: "Completed",
     year: "2025",
@@ -201,7 +202,7 @@ export const projects = [
     title: "Dashboard Design",
     description:
       "Clean and modern dashboard UI designed in Figma — featuring clear data visualization, minimal layout, and user-friendly navigation.",
-    image: "/figmaproject.png",
+    image: "/project/figmaproject.png",
     technologies: ["Figma"],
     category: "Web Design",
     status: "Completed",
@@ -211,60 +212,92 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Portfolio Website",
+    title: "Bexon",
     description:
-      "Modern and responsive portfolio website showcasing creative work with smooth animations and interactive elements.",
-    image: "/image.png",
-    technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "Vercel"],
+      "Reverse-engineered a modern website, focusing on responsive design, fluid animations, and interactive micro-interactions to sharpen frontend execution skills.",
+    image: "/project/Bexon.png",
+    technologies: ["Next.js", "React.js", "Tailwind CSS"],
     category: "Website",
     status: "Completed",
     year: "2024",
-    link: "#",
-    github: "#",
+    link: "https://bexon-web.vercel.app/",
+    github: "https://github.com/karansingh102019/BexonWEB",
+  },
+  {
+    id: 4,
+    title: "Aleric",
+    description:
+      "Reverse-engineered a modern portfolio website, focusing on responsive design, fluid animations, and interactive micro-interactions to sharpen frontend execution skills.",
+    image: "/project/Aleric.png",
+    technologies: ["Next.js", "React.js", "Tailwind CSS"],
+    category: "Website",
+    status: "Completed",
+    year: "2024",
+    link: "https://aleric-ten.vercel.app/",
+    github: "https://github.com/karansingh102019/aleric",
+  },
+  {
+    id: 5,
+    title: "Nexus-Blogging_Platform",
+    description:
+      "Nexus is more than just a blogging platform—it's a community of passionate writers and curious readers coming together to share knowledge, stories, and experiences.",
+    image: "/project/blogging.png",
+    technologies: [
+      "Next.js",
+      "React.js",
+      "Tailwind CSS",
+      "ReactBits",
+      "mySql",
+      "JWT",
+    ],
+    category: "Website",
+    status: "Completed",
+    year: "2024",
+    link: "https://nexus-bloggingplatform.vercel.app/",
+    github: "https://github.com/karansingh102019/Blogging_PlatForm",
   },
 ];
 
-
 export const contactInfo = [
-    {
-      iconName: <MdEmail />,
-      title: "Email",
-      value: "kn8610519@gmail.com",
-      href: "mailto:kn8610519@gmail.com",
-    },
-    {
-      iconName: <MdLocationOn />,
-      title: "Location",
-      value: "New Delhi, India",
-      href: null,
-    },
-    {
-      iconName: <MdSchedule />,
-      title: "Availability",
-      value: "Available for work",
-      href: null,
-    },
-  ];
+  {
+    iconName: <MdEmail />,
+    title: "Email",
+    value: "kn8610519@gmail.com",
+    href: "mailto:kn8610519@gmail.com",
+  },
+  {
+    iconName: <MdLocationOn />,
+    title: "Location",
+    value: "New Delhi, India",
+    href: null,
+  },
+  {
+    iconName: <MdSchedule />,
+    title: "Availability",
+    value: "Available for work",
+    href: null,
+  },
+];
 
-  export const socialLinks = [
-    {
-      name: "LinkedIn",
-      href: "https://linkedin.com/in/karan-singh-negi-993136270",
-      icon: <FaLinkedinIn />,
-    },
-    {
-      name: "GitHub",
-      href: "https://github.com/karansingh102019",
-      icon: <FaGithub />,
-    },
-    {
-      name: "Twitter",
-      href: "#",
-      icon: <FaTwitter />,
-    },
-    {
-      name: "Instagram",
-      href: "#",
-      icon: <FaInstagram />,
-    },
-  ];
+export const socialLinks = [
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/karan-singh-negi-993136270",
+    icon: <FaLinkedinIn />,
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/karansingh102019",
+    icon: <FaGithub />,
+  },
+  {
+    name: "Twitter",
+    href: "#",
+    icon: <FaTwitter />,
+  },
+  {
+    name: "Instagram",
+    href: "#",
+    icon: <FaInstagram />,
+  },
+];

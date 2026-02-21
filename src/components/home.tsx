@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
-import { useRef} from "react";
+import { useRef } from "react";
 
 // Mock data
 
@@ -25,13 +25,11 @@ export default function HomePage() {
           start: "top 30%",
           end: "bottom 50%",
           scrub: true,
-          pin: true,      
+          pin: true,
         },
       });
     }
   });
-
-
 
   return (
     <>
@@ -42,10 +40,7 @@ export default function HomePage() {
         {/* Container */}
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
           <section className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 sm:gap-12 lg:gap-20">
-            
-            
             <div className="flex-1 text-center lg:text-left max-w-2xl w-full">
-              
               {/* LEVEL 1: Status Badge - Smallest visual weight, tertiary information */}
               <div className="shimmerauto inline-flex items-center gap-2 sm:gap-2.5 bg-green-900/20 slide-in-left px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-green-700 mb-6 sm:mb-8">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -62,7 +57,7 @@ export default function HomePage() {
                     Karan Singh Negi
                   </span>
                 </h1>
-                
+
                 {/* Subheading - Secondary hierarchy */}
                 <div className="text-xl xs:text-2xl sm:text-3xl lg:text-[2.5rem] font-semibold text-gray-300 leading-tight">
                   <TrueFocus
@@ -95,34 +90,48 @@ export default function HomePage() {
                 ))}
               </div>
 
-              {/* LEVEL 5: Call-to-Actions - High priority actions, balanced button weight */}
-              <div className="cursor-pointer flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-12">
+              {/* LEVEL 5: Call-to-Actions*/}
+              <div className="cursor-pointer w-[95%] flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center lg:justify-start mb-8 sm:mb-12">
                 <button
+                  onClick={() => (window.location.href = "#project")}
                   className="cursor-pointer shimmerauto w-full sm:min-w-[200px] px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-red-900 to-purple-600 rounded-xl hover:from-red-800 hover:to-purple-700 
                   text-white text-sm sm:text-base font-semibold tracking-wide transition-all duration-300  transform hover:-translate-y-1"
                 >
                   View My Work
                 </button>
 
-                <button className="cursor-pointer shimmer w-full sm:min-w-[200px] px-8 sm:px-10 py-3 sm:py-4 bg-transparent text-gray-200 hover:text-red-600 text-sm sm:text-base font-medium tracking-wide rounded-xl border-2 border-gray-600 hover:border-red-600 hover:bg-gradient-to-r from-red-800/10 to-red-900/30 transition-all duration-300 transform hover:-translate-y-1">
+                <button
+                  onClick={() => (window.location.href = "#contact")}
+                  className="cursor-pointer shimmer w-[50%] sm:min-w-[200px] px-8 sm:px-10 py-3 sm:py-4 bg-transparent text-gray-200 hover:text-red-600 text-sm sm:text-base font-medium tracking-wide rounded-xl border-2 border-gray-600 hover:border-red-600 hover:bg-gradient-to-r from-red-800/10 to-red-900/30 transition-all duration-300 transform hover:-translate-y-1"
+                >
                   Get In Touch
                 </button>
               </div>
 
-              {/* LEVEL 6: Contact Info - Lowest priority, footer-like information */}
+              {/* LEVEL 6: Contact Info */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start pt-6 sm:pt-8 border-t border-gray-800/50">
                 <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-200 group">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 text-green-500 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 text-green-500 group-hover:scale-110 transition-transform"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <span className="font-medium break-all sm:break-normal">kn8610519@gmail.com</span>
+                  <span className="font-medium break-all sm:break-normal">
+                    kn8610519@gmail.com
+                  </span>
                 </div>
-                
+
                 <div className="hidden sm:block w-px h-6 bg-gray-700 self-center"></div>
-                
+
                 <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-200 group">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 text-green-500 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 text-green-500 group-hover:scale-110 transition-transform"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"

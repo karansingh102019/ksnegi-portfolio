@@ -1,57 +1,44 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useMemo } from "react";
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 gsap.registerPlugin(MotionPathPlugin);
 
-// Coding Symbols
 const codingSymbols = [
-  "< />",
-  "{ }",
-  "( )",
-  "[ ]",
-  "</>",
-  "<div>",
-  "</div>",
-  "<script>",
-  "<head>",
-  "<meta>",
-  "<link>",
-  "<span>",
-  "<p>",
+  "< />", "{ }", "( )", "[ ]", "</>", "<div>", "</div>",
+  "<script>", "<head>", "<meta>", "<link>", "<span>", "<p>",
 ];
 
-// Tech Logo Names
 const techIcons = [
-  "react",
-  "next",
-  "js",
-  "ts",
-  "git",
-  "github",
-  "docker",
-  "html",
-  "css",
-  "tailwind",
-  "node",
-  "vite",
-  "figma",
-  "firebase",
-  "mongo",
-  "aws",
-  "npm",
-  "hooks",
-  "gsap",
-  "mysql",
-  "photoshop",
-  "",
+  "react", "next", "js", "ts", "git", "github", "docker",
+  "html", "css", "tailwind", "node", "vite", "figma",
+  "firebase", "mongo", "aws", "npm", "hooks", "gsap",
+  "mysql", "photoshop", "",
 ];
 
 export default function PortfolioLoader({ onDone }: { onDone?: () => void }) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const logoRef = useRef<HTMLDivElement | null>(null);
   const textRef = useRef<HTMLDivElement | null>(null);
+
+  // ✅ FIX: Math.random() values useMemo mein — sirf ek baar client pe generate hoga
+  const floatingItems = useMemo(() => {
+    return Array.from({ length: 45 }).map((_, i) => {
+      const item =
+        i % 2 === 0
+          ? codingSymbols[Math.floor(Math.random() * codingSymbols.length)]
+          : techIcons[Math.floor(Math.random() * techIcons.length)];
+
+      return {
+        item,
+        top: Math.random() * 100,
+        left: Math.random() * 100,
+        duration: 4 + Math.random() * 3,
+        isText: typeof item === "string" && item.length <= 6,
+      };
+    });
+  }, []); // ← empty deps = sirf once on mount
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -102,13 +89,7 @@ export default function PortfolioLoader({ onDone }: { onDone?: () => void }) {
         ref={logoRef}
         className="relative flex flex-col items-center select-none"
       >
-        <svg
-          width="230"
-          height="230"
-          viewBox="0 0 200 200"
-          fill="none"
-          className="mb-4"
-        >
+        <svg width="230" height="230" viewBox="0 0 200 200" fill="none" className="mb-4">
           <path
             id="logo-stroke"
             d="M40 150 L40 60 L70 60 L70 110 L110 60 L150 60 L150 150 L120 150 L120 100 L85 150 L40 150 Z"
@@ -127,31 +108,22 @@ export default function PortfolioLoader({ onDone }: { onDone?: () => void }) {
         </div>
       </div>
 
-      {/* Floating Tags + Logos */}
-      {Array.from({ length: 45 }).map((_, i) => {
-        const item =
-          i % 2 === 0
-            ? codingSymbols[Math.floor(Math.random() * codingSymbols.length)]
-            : techIcons[Math.floor(Math.random() * techIcons.length)];
-
-        const isText = typeof item === "string" && item.length <= 6;
-
-        return (
-          <div
-            key={i}
-            className="absolute font-mono drop-shadow select-none"
-            style={{
-              top: Math.random() * 100 + "%",
-              left: Math.random() * 100 + "%",
-              animation: `floatTag ${4 + Math.random() * 3}s linear infinite`,
-              color: "#7e1921",
-              fontSize: "20px",
-            }}
-          >
-            {isText ? item : <span>{getLogo(item)}</span>}
-          </div>
-        );
-      })}
+      {/* ✅ Fixed Floating Tags — useMemo se pre-generated values use ho rahi hain */}
+      {floatingItems.map((f, i) => (
+        <div
+          key={i}
+          className="absolute font-mono drop-shadow select-none"
+          style={{
+            top: f.top + "%",
+            left: f.left + "%",
+            animation: `floatTag ${f.duration}s linear infinite`,
+            color: "#7e1921",
+            fontSize: "20px",
+          }}
+        >
+          {f.isText ? f.item : <span>{getLogo(f.item)}</span>}
+        </div>
+      ))}
 
       <style>{`
         @keyframes floatTag {
@@ -164,10 +136,9 @@ export default function PortfolioLoader({ onDone }: { onDone?: () => void }) {
   );
 }
 
-/* SVG ICONS  (20px, color #7e1921) */
+/* SVG ICONS */
 function getLogo(name: string) {
   const color = "#7e1921";
-
   switch (name) {
     case "react":
       return (
@@ -177,7 +148,6 @@ function getLogo(name: string) {
           <ellipse cx="12" cy="12" rx="4" ry="10" stroke={color} />
         </svg>
       );
-
     case "next":
       return (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -185,64 +155,48 @@ function getLogo(name: string) {
           <path d="M3 3H12V21H3V3Z" stroke={color} />
         </svg>
       );
-
     case "js":
       return (
         <svg width="20" height="20">
           <circle cx="10" cy="10" r="8" stroke={color} fill="transparent" />
         </svg>
       );
-
     case "ts":
       return (
         <svg width="20" height="20">
           <rect width="18" height="18" stroke={color} fill="transparent" />
         </svg>
       );
-
     case "git":
       return (
         <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
           <path d="M3 12L12 3L21 12L12 21L3 12Z" stroke={color} />
         </svg>
       );
-
     case "github":
       return (
         <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
           <circle cx="12" cy="12" r="9" stroke={color} />
         </svg>
       );
-
     case "docker":
       return (
         <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
           <rect x="3" y="10" width="18" height="8" stroke={color} />
         </svg>
       );
-
     case "html":
       return (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-          <polygon
-            points="4,3 20,3 18,21 12,23 6,21"
-            stroke={color}
-            fill="none"
-          />
+          <polygon points="4,3 20,3 18,21 12,23 6,21" stroke={color} fill="none" />
         </svg>
       );
-
     case "css":
       return (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-          <polygon
-            points="4,3 20,3 18,21 12,23 6,21"
-            stroke={color}
-            fill="none"
-          />
+          <polygon points="4,3 20,3 18,21 12,23 6,21" stroke={color} fill="none" />
         </svg>
       );
-
     case "tailwind":
       return (
         <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
@@ -254,29 +208,18 @@ function getLogo(name: string) {
           />
         </svg>
       );
-
     case "node":
       return (
         <svg width="20" height="20" viewBox="0 0 24 24">
-          <polygon
-            points="12,2 21,7 21,17 12,22 3,17 3,7"
-            stroke={color}
-            fill="none"
-          />
+          <polygon points="12,2 21,7 21,17 12,22 3,17 3,7" stroke={color} fill="none" />
         </svg>
       );
-
     case "vite":
       return (
         <svg width="20" height="20">
-          <polygon
-            points="10,2 18,8 14,22 6,22 2,8"
-            stroke={color}
-            fill="none"
-          />
+          <polygon points="10,2 18,8 14,22 6,22 2,8" stroke={color} fill="none" />
         </svg>
       );
-
     case "figma":
       return (
         <svg width="20" height="20">
@@ -284,25 +227,18 @@ function getLogo(name: string) {
           <circle cx="10" cy="10" r="3" stroke={color} fill="none" />
         </svg>
       );
-
     case "firebase":
       return (
         <svg width="20" height="20">
           <polygon points="6,18 12,3 18,18" stroke={color} fill="none" />
         </svg>
       );
-
     case "mongo":
       return (
         <svg width="20" height="20">
-          <path
-            d="M10 2C4 12 10 18 10 18C10 18 16 12 10 2Z"
-            stroke={color}
-            fill="none"
-          />
+          <path d="M10 2C4 12 10 18 10 18C10 18 16 12 10 2Z" stroke={color} fill="none" />
         </svg>
       );
-
     default:
       return null;
   }

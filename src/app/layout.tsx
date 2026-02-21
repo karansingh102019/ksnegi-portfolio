@@ -1,11 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { geistSans, geistMono } from "@/lib/fonts";
-import ClickSparkGlobal from "@/animations/ClickSparkGlobal";
 import SplashClient from "@/components/SplashClient";
+import ServiceWorkerProvider from "@/components/ServiceWorkerProvider";
 
 export const metadata: Metadata = {
-  title: "NEXUS-  Portfolio",
+  title: "NEXUS-Portfolio",
   description:
     "Portfolio of Karan Singh Negi, a UI Developer skilled in modern frontend technologies and UI/UX design. I build fast, responsive, visually polished interfaces with strong focus on usability, clean design systems, and seamless user experiences.",
   keywords: [
@@ -45,7 +45,7 @@ export default function RootLayout({
       <body
         className={` ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ClickSparkGlobal />
+        <ServiceWorkerProvider />
         <SplashClient>
           <div className="min-h-screen bg-black ">{children}</div>
         </SplashClient>

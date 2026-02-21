@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { FromType } from "@/types/types";
 import { contactInfo, socialLinks } from "@/data/data";
 
-export default function ContactPage() {  
-
+export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -66,7 +65,6 @@ export default function ContactPage() {
 
   return (
     <div className="bg-black text-white relative overflow-hidden border-t border-red-800">
-      
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         {/* Header Section */}
         <div className="text-center mb-20">
@@ -78,7 +76,9 @@ export default function ContactPage() {
           </div>
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            {"Have a project in mind or just want to say hello? I'd love to hear from you. Let's create something"}
+            {
+              "Have a project in mind or just want to say hello? I'd love to hear from you. Let's create something"
+            }
             <span className="text-red-400 font-medium"> amazing </span>
             together.
           </p>
