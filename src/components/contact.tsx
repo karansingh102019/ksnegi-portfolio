@@ -236,8 +236,10 @@ export default function ContactPage() {
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href={social.href}
-                    className="group w-12 h-12 bg-gray-800/50 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-red-800 transition-all duration-300 hover:scale-110"
+                    className="group w-12 h-12  bg-gray-800/50 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-red-800 transition-all duration-300 hover:scale-110"
                   >
                     {social.icon}
                   </a>

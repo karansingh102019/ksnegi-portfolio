@@ -282,7 +282,7 @@ export const contactInfo = [
 export const socialLinks = [
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/karan-singh-negi-993136270",
+    href: "https://linkedin.com/in/karansinghnegiuidev",
     icon: <FaLinkedinIn />,
   },
   {
@@ -292,12 +292,12 @@ export const socialLinks = [
   },
   {
     name: "Twitter",
-    href: "#",
+    href: "https://x.com/KaranNe00082331",
     icon: <FaTwitter />,
   },
   {
     name: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/___karan_negi___?igsh=OHp2OXdrYnFsNjA2",
     icon: <FaInstagram />,
   },
 ];
