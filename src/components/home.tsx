@@ -178,7 +178,7 @@ export default function HomePage() {
                   ref={images}
                   width={400}
                   height={450}
-                  src="/save.png"
+                  src="/myProfile2.png"
                   alt="Karan Singh Negi - UI/UX Designer"
                   className="brightness-75 rounded-2xl object-cover w-full h-auto aspect-[8/9] sm:w-[350px] sm:h-[394px] lg:w-[400px] lg:h-[450px] transition-transform duration-700 group-hover:scale-105 group-hover:rotate-1"
                 />
