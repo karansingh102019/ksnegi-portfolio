@@ -130,27 +130,13 @@ export const skillsData: Skill[] = [
 ];
 
 export const experiences = [
-  {
-    year: "2025 - Present",
-    role: "Frontend Developer",
-    company: "Estivasoftech",
-    description:
-      "Frontend Developer creating responsive, interactive, and high-performance web applications using React, Next.js, and modern front-end technologies.",
-  },
-  {
-    year: "2024 - 2025",
+ {
+    year: "2024 - 2026",
     role: "UI Developer",
-    company: "Estivasoftech",
+    company: "Vallosoft",
     description:
-      "UI Developer turning designs into interactive, responsive, and user-friendly web experiences using React, Next.js, and modern front-end technologies",
-  },
-  {
-    year: "2023 - 2024",
-    role: "Ui/Ux Designer",
-    company: "Digitechmate",
-    description:
-      "UI/UX Designer focused on creating clean, user-friendly interfaces and engaging digital experiences. Experienced in Figma, prototyping, and responsive design.",
-  },
+      "UI Developer turning designs into interactive, responsive, and user-friendly web experiences using React, Next.js, and modern front-end technologies and UI/UX Designer focused on creating clean, user-friendly interfaces and engaging digital experiences. Experienced in Figma, prototyping, and responsive design.",
+  }
 ];
 
 export const achievements = [
